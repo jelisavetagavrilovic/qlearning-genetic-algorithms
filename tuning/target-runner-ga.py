@@ -34,7 +34,7 @@ if len(sys.argv) < 5:
 
 script_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../src"))
 # ga_script = os.path.join(script_dir, "geneticAlgorithm.py")
-ga_script = os.path.join(script_dir, "main.py")
+ga_script = os.path.join(script_dir, "geneticAlgorithm.py")
 
 
 config_id = sys.argv[1]

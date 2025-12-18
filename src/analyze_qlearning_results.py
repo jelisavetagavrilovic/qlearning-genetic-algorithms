@@ -4,10 +4,10 @@ import seaborn as sns
 
 df = pd.read_csv("src/results-qLearning.csv")
 
-# Drop rows where 'best_fitness' is NaN
+# drop rows where 'best_fitness' is NaN
 df_cleaned = df.dropna(subset=['best_fitness'])
 
-# Find the row with the highest 'best_fitness'
+# find the row with the highest 'best_fitness'
 if not df_cleaned.empty:
     best_row = df_cleaned.loc[df_cleaned['best_fitness'].idxmax()]
     print("Best row:")
@@ -18,10 +18,6 @@ else:
 print("Summary statistics:")
 print(df.groupby(["alpha", "gamma", "epsilon_start", "epsilon_end"])["best_fitness"].agg(['mean', 'std', 'max', 'min']))
 
-# # find best parameter combination
-# best_row = df.loc[df['best_fitness'].idxmax()]
-# print("\nBest parameter combination:")
-# print(best_row)
 
 # plot: best fitness by alpha/gamma
 plt.figure(figsize=(10,6))
@@ -37,7 +33,7 @@ plt.title("Best Fitness by Epsilon Start/End")
 plt.savefig("fitness_by_epsilon.png")
 plt.show()
 
-# optional: Heatmap of mean fitness for all parameter combos
+# heatmap of mean fitness for all parameter combos
 pivot = df.pivot_table(index="alpha", columns="gamma", values="best_fitness", aggfunc="mean")
 plt.figure(figsize=(8,6))
 sns.heatmap(pivot, annot=True, fmt=".1f", cmap="viridis")
