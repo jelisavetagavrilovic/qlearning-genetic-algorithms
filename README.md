@@ -32,7 +32,7 @@ Two approaches are evaluated:
 - **Static GA**: crossover and mutation operators are fixed throughout the run
 - **Q-learning GA**: operator selection is controlled by a Q-learning agent
 
----
+<!-- --- -->
 
 ### Q-Learning Component
 
@@ -43,7 +43,7 @@ Two approaches are evaluated:
 
 The agent updates its policy online using the standard Q-learning update rule.
 
----
+<!-- --- -->
 
 ### Hyperparameter Tuning
 
